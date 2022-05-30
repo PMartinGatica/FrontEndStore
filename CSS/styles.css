@@ -33,6 +33,7 @@ html {
       text-align: center;
       color: var(--secundario);
       font-family: var(--fuentePrincipal);
+      text-transform: uppercase;
   }
 
   p{
@@ -44,12 +45,15 @@ html {
       text-decoration: none;
   }
   img{
-      max-width: 100%;
+      width: 100%;
   }
 
   .contenedor{
-      max-width: 120rem;
+      max-width: 100rem;
       margin: 0 auto;
+  }
+  .contenedor h1{
+    text-transform: uppercase;
   }
 
   body{
@@ -76,6 +80,8 @@ html {
         display: flex;
         justify-content: center;
         gap: 5rem;
+        text-transform: uppercase;
+        font-weight: bold;
   }
   .navegacion__enlace{
         font-family: var(--fuentePrincipal);
@@ -105,21 +111,189 @@ html {
 
   }
 
+/* GRID */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 1rem;
+
+}
+
+@media (min-width: 768px) {
+  .grid{
+      grid-template-columns: repeat(3,1fr);
+      
+   }    
+}
   /* PRODUCTO */
 
     
-/* .producto{
-      
+.producto{
+     background-color: var(--primarioOscuro);
+     padding: 1rem; 
+     text-align: center;
+
 }
 .producto__imagen{
+    width: 100%;
       
 }
 .producto__informacion{
       
 }
 .producto__nombre{
-      
+    font-size: 3rem;  
 }
 .producto__precio{
-      
-} */
+  font-size: 3rem;
+  color: var(--secundario);
+}
+
+.producto__nombre,.producto__precio{
+  font-family: var(--fuentePrincipal);
+  font-weight:lighter;
+  margin: 1rem 0;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* GRAFICOS */
+
+.grafico{
+  min-height: 30rem;
+  background-repeat:no-repeat;
+  background-size: cover;
+  grid-column: 1/3;
+}
+.grafico--camisas{
+  grid-row: 2/3;
+  
+  background-image: url(../img/grafico1.jpg);
+}
+.grafico--node{
+  background-image: url(../img/grafico2.jpg);
+  
+  grid-row: 8/9;
+}
+@media (min-width: 768px) {
+  .grafico--node{
+    grid-row: 5/6;
+    grid-column: 2/4;
+    
+  }    
+}
+
+/* NOSOTROS */
+
+/* Parrafo */
+.nosotros{
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.iconos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nosotros_grid{
+  display: grid;
+  grid-template-rows: repeat(2,auto);
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .nosotros_grid{
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 2rem;
+  }    
+}
+
+
+.nosotros_grid__imagen{
+  grid-row: 1/2;
+}
+@media (min-width: 768px) {
+  .nosotros_grid__imagen{
+    grid-column: 2/3;
+  }
+}
+
+/* BLOQUES ICONOS */
+
+.bloques{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .bloques{
+    grid-template-columns: repeat(4,1fr);
+  }
+  
+}
+
+.bloque{
+  text-align: center;
+
+}
+
+.bloque__titulo{
+  margin: 0;
+}
+
+
+/* PRODUCTO */
+
+
+
+@media (min-width: 768px) {
+  .camisa{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 2rem;
+  }
+    
+}
+
+.formulario{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 2rem;
+}
+
+.formulario__campo{
+  border-color: var(--primarioOscuro);
+  border-width: 1rem;
+  border-style: solid;
+/* 
+  Es lo mismo que decir 
+  border: 1rem solid #AAFF; */
+  background-color: var(--primario);
+  color: var(--blanco);
+  font-size: 2rem;
+  font-family: var(--fuentePrincipal);
+  padding: 1rem;
+  appearance: none;
+}
+
+.formulario__submit{
+  background-color: var(--secundario);
+  padding: 2rem;
+  border: none;
+  font-family: var(--fuentePrincipal);
+  font-size: 2rem;
+  transition: background-color .2s ease;
+  grid-column: 1/3;
+}
+
+.formulario__submit:hover{
+  cursor: pointer;
+  font-size: 3rem;
+  background-color: var(--secundarioOscuro)
+
+}
